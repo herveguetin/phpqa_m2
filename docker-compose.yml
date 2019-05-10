@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+    php:
+        build:
+            context: .
+        container_name: m2-qa
+        volumes:
+            - ${SOURCE_CODE_PATH}:/source
+            - ${REPORT_PATH}:/report

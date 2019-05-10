@@ -1,0 +1,72 @@
+{
+    "name": "herveguetin/phpqa",
+    "type": "library",
+    "description": "Analyze Magento 2 code with one command. Based on edgedesign/phpqa",
+    "keywords": ["QA", "code analysis", "static analysis", "Magento"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zdenek Drahos",
+            "email": "drahoszdenek@gmail.com"
+        },
+        {
+            "name": "Hervé Guétin",
+            "email": "herve.guetin@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/EdgedesignCZ/phpqa/issues",
+        "source": "https://github.com/EdgedesignCZ/phpqa",
+        "docs": "https://edgedesigncz.github.io/phpqa/"
+    },
+    "bin": ["phpqa"],
+    "require": {
+        "php": ">=5.4",
+        "ext-xsl": "*",
+        "consolidation/robo": "~0|~1",
+        "phpmd/phpmd" : "*",
+        "phploc/phploc": "*",
+        "symfony/dependency-injection": ">=2.8",
+        "symfony/filesystem": ">=2.8",
+        "symfony/process": ">=2.8",
+        "symfony/finder": ">=2.8",
+        "symfony/yaml": ">=2.8",
+        "twig/twig": "~1.38|~2.7",
+        "pdepend/pdepend": "*",
+        "sebastian/phpcpd": "*",
+        "squizlabs/php_codesniffer": "*",
+        "phpmetrics/phpmetrics": "*",
+        "magento/marketplace-eqp": "^2.0"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/magento/marketplace-eqp"            
+        }
+    ],
+    "suggest": {
+        "sensiolabs/security-checker": "Check composer.lock for known security issues",
+        "friendsofphp/php-cs-fixer": "A tool to automatically fix PHP coding standards issues",
+        "phpunit/phpunit": "The PHP Unit Testing framework",
+        "phpstan/phpstan": "PHP Static Analysis Tool - discover bugs in your code without running it!",
+        "vimeo/psalm": "A static analysis tool for finding errors in PHP applications",
+        "jakub-onderka/php-parallel-lint": "Check PHP syntax",
+        "jakub-onderka/php-console-highlighter": "Colored output in parallel-lint"
+    },
+    "require-dev": {
+        "hamcrest/hamcrest-php": "*",
+        "phpunit/phpunit": "~4.8.28"
+    },
+    "autoload": {
+        "psr-4": {
+            "Edge\\QA\\": "src"
+        },
+        "files": ["src/report.php", "src/paths.php"]
+    },
+    "autoload-dev": {
+        "files": ["vendor/hamcrest/hamcrest-php/hamcrest/Hamcrest.php"]
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
